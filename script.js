@@ -21,6 +21,13 @@ inputButton.forEach(button => {
             } catch {
                 displayOutput.value = 'Error';
             }
+        } else if(action === 'squareRoot') {
+            try {
+                let currentValue = eval(displayOutput.value);
+                displayOutput.value = Math.sqrt(currentValue);
+            } catch {
+                displayOutput.value = 'Error';
+            }
         } else {
             if (takeButtonValue != "") {
                 displayOutput.value += takeButtonValue;
