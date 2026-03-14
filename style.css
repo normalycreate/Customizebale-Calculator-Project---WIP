@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 @media (prefers-color-scheme: dark){
     :root {
@@ -36,8 +37,10 @@ body {
     box-shadow: 0px 10px 0px 1px rgba(0,0,0,0.5);
 }
 .display {
+    font-family: 'Roboto Mono', monospace;
     height: 150px;
     width: 500px;
+    padding-right: 20px;
     text-align: right;
     font-size: 3.5rem;
     border: none;
@@ -88,7 +91,6 @@ body {
     transform: scale(0.95);
 }
 .equal {
-    grid-row: span 2;
     background-color: var(--emerald-green);
     color: var(--plain-white);
     border: var(--hookers-green) 2px solid;
@@ -104,4 +106,3 @@ body {
 .clear:active {
     background-color: #993838;
 }
-
