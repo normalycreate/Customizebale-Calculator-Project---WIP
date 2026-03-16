@@ -14,14 +14,14 @@ inputButton.forEach(button => {
             displayOutput.value = displayOutput.value.slice(0, -1);
         } else if(action === 'equal') {
             try {
-                displayOutput.value = eval(displayOutput.value);
+                displayOutput.value = eval(displayOutput.value).toFixed(11);
             } catch {
                 displayOutput.value = 'Error';
             }
         } else if(action === 'squareRoot') {
             try {
                 let currentValue = eval(displayOutput.value);
-                displayOutput.value = Math.sqrt(currentValue);
+                displayOutput.value = Math.sqrt(currentValue).toFixed(11);
             } catch {
                 displayOutput.value = 'Error';
             }
