@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <title>Calculator</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+        @media (prefers-color-scheme: dark){
+            :root {
+                /*For Basic*/
+                --hookers-green: #41431B;
+                --beige: #F8F3E1;
+                --darkern-beige: #E3DBBB;
+                --emerald-green: #AEB784;
+                --blushed-red: #BF4646;
+                --plain-white : #F9F8F6;
+                --beige-and-brown : #6E5034;
+            }
+        }
+
+        * {
+            font-family: "Poppins", sans-serif;
+            border: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--hookers-green);
+            height: 100vh;
+        }
+        .calculator {
+            background-color: var(--beige);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 10px 0px 1px rgba(0,0,0,0.5);
+        }
+        .display {
+            font-family: 'Roboto Mono', monospace;
+            height: 150px;
+            width: 500px;
+            padding-right: 20px;
+            padding-left: 20px;
+            text-align: right;
+            font-size: 3.5rem;
+            border: none;
+            background-color: var(--emerald-green);
+            border-radius: 5px;
+            color: var(--plain-white);   
+            margin-bottom: 10px;
+            border: var(--hookers-green) 2px solid;
+            box-shadow: 2px 2px 2px 0px #00000071, inset 2px 2px 2px 0px #00000064, inset -2px -2px 0px 1px rgba(0, 0, 0, 0.329);
+        }
+        .button {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .numButton {
+            padding: 35px;
+            cursor: pointer;
+            font-size: 2rem;
+            font-weight: 600;
+            border-radius: 10px;
+            background-color: var(--darkern-beige);
+            color: var(--beige-and-brown);
+            box-shadow: 0px 5px 0px 1px rgba(0,0,0,0.3);
+            border: var(--beige-and-brown) 2px solid;
+            }
+        .numButton:hover {
+            transform: translateY(-2px);
+            background-color: #beca89;
+            color: var(--plain-white);
+        }
+        .numButton:active {
+            transform: scale(0.95);
+            background-color: #869c65;
+            color: var(--plain-white);
+        }
+        .operatorButton {
+            background-color: var(--beige-and-brown);
+            color: var(--plain-white);
+        }
+        .operatorButton:hover {
+            background-color: #5b422c;
+            transform: translateY(-2px);
+        }
+        .operatorButton:active {
+            background-color: #4b3723;
+            color: white;
+            transform: scale(0.95);
+        }
+        .equal {
+            background-color: var(--emerald-green);
+            color: var(--plain-white);
+            border: var(--hookers-green) 2px solid;
+        }
+        .clear {
+            background-color: var(--blushed-red);
+            color: var(--plain-white);
+            border: #762b2b 2px solid;
+        }
+        .clear:hover {
+            background-color: #e65e5e;
+        }
+        .clear:active {
+            background-color: #993838;
+        }
+    </style>
+    <div class="calculator">
+        <input type="text" class="display" id="display" >
+        <div class="button">
+            <button class="numButton clear" data-action="clear"><i class="fa-solid fa-border-none"></i></button>
+            <button class="numButton" data-action="delete"><i class="fa-solid fa-delete-left"></i></button>
+            <button class="numButton" data-value="."><i class="fa-regular fa-circle-dot"></i></button>
+            <button class="numButton" data-action="squareRoot"><i class="fa-sharp fa-solid fa-square-root-variable"></i></button>
+            <button class="numButton operatorButton" data-value="+"><i class="fa-solid fa-plus"></i></button>
+            <button class="numButton">9</button>
+            <button class="numButton">8</button>
+            <button class="numButton">7</button>
+            <button class="numButton operatorButton" data-value="-"><i class="fa-solid fa-minus"></i></button>
+            <button class="numButton">6</button>
+            <button class="numButton">5</button>
+            <button class="numButton">4</button>
+            <button class="numButton operatorButton" data-value="*"><i class="fa-solid fa-xmark"></i></button>
+            <button class="numButton">3</button>
+            <button class="numButton">2</button>
+            <button class="numButton">1</button>
+            <button class="numButton operatorButton" data-value="/"><i class="fa-solid fa-divide"></i></button>
+            <button class="numButton">00</button>
+            <button class="numButton">0</button>
+            <button class="numButton equal" data-action="equal" data-value="="><i class="fa-solid fa-equals"></i></button>
+        </div>
+    </div>
+    <script>
+        console.log("Javascript berjalan")
+        const displayOutput = document.getElementById('display');
+        const inputButton = document.querySelectorAll('.numButton');
+        // How the calculator displayed
+        inputButton.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const buttonTarget = e.currentTarget;
+                const action = buttonTarget.getAttribute('data-action');
+                let takeButtonValue = buttonTarget.getAttribute('data-value');
+                if(!takeButtonValue) {
+                    takeButtonValue = buttonTarget.innerText.trim();
+                }
+                // Calculator Logical
+                if(action === 'clear') {
+                    displayOutput.value = '';
+                } else if(action === 'delete') {
+                    displayOutput.value = displayOutput.value.slice(0, -1);
+                } else if(action === 'equal') {
+                    try {
+                        displayOutput.value = eval(displayOutput.value);
+                    } catch {
+                        displayOutput.value = 'Error';
+                    }
+                } else if(action === 'squareRoot') {
+                    try {
+                        let currentValue = eval(displayOutput.value);
+                        displayOutput.value = Math.sqrt(currentValue);
+                    } catch {
+                        displayOutput.value = 'Error';
+                    }
+                } else {
+                    if (takeButtonValue != "") {
+                        displayOutput.value += takeButtonValue;
+                    }   
+                }
+            });
+        });
+    </script>
+</body>
+</html>
