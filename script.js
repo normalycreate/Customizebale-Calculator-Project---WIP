@@ -7,9 +7,6 @@ inputButton.forEach(button => {
         const buttonTarget = e.currentTarget;
         const action = buttonTarget.getAttribute('data-action');
         let takeButtonValue = buttonTarget.getAttribute('data-value');
-        if(!takeButtonValue) {
-            takeButtonValue = buttonTarget.innerText.trim();
-        }
         // Calculator Logical
         if(action === 'clear') {
             displayOutput.value = '';
