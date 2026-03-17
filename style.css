@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+/*To anticipate Error That Impact to user that use light mode in browser and to give the costumization in the future :)*/
+:root {
+    --hookers-green: #41431B;
+    --beige: #F8F3E1;
+    --darkern-beige: #E3DBBB;
+    --emerald-green: #AEB784;
+    --blushed-red: #BF4646;
+    --plain-white : #F9F8F6;
+    --beige-and-brown : #6E5034;
+}
+
+
 @media (prefers-color-scheme: dark){
     :root {
-        /*For Basic*/
+        /*For Dark Mode*/
         --hookers-green: #41431B;
         --beige: #F8F3E1;
         --darkern-beige: #E3DBBB;
@@ -106,4 +118,40 @@ body {
 }
 .clear:active {
     background-color: #993838;
+}
+
+/*To Optimized the screen in 720p and mobile experience
+DISCLAIMER : Not suitable for the screen under 720p!*/
+@media (max-height: 870px) {
+    .display {
+        height: 105px;
+        width: 400px;
+    }
+    .button {
+        gap: 8px;
+    }
+    .numButton {
+        padding: 20px;
+        border: var(--beige-and-brown) 1px solid;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-color: var(--beige);
+    }
+    .calculator {
+        background-color: none;
+        box-shadow: none;
+        padding: none;
+        border-radius: none;
+    }
+    .display {
+        width: 400px;
+        height: 130px;
+    }
+    .numButton {
+        padding: 20px;
+        font-size: 2rem;
+    }
 }
