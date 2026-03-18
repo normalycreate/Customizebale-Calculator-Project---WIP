@@ -14,14 +14,19 @@ inputButton.forEach(button => {
             displayOutput.value = displayOutput.value.slice(0, -1);
         } else if(action === 'equal') {
             try {
-                displayOutput.value = eval(displayOutput.value);
+                let calculateAll = eval(displayOutput.value);
+                if (!Number.isInteger(calculateAll) && calculateAll.toString().split('.')[1]?.length > 7) {
+                    displayOutput.value = parseFloat(calculateAll.toFixed(8));
+                } else {
+                    displayOutput.value = calculateAll;
+                }
             } catch {
                 displayOutput.value = 'Error';
             }
         } else if(action === 'squareRoot') {
             try {
                 let currentValue = eval(displayOutput.value);
-                displayOutput.value = Math.sqrt(currentValue).toFixed(4);
+                displayOutput.value = Math.sqrt(currentValue).toFixed(8);
             } catch {
                 displayOutput.value = 'Error';
             }
