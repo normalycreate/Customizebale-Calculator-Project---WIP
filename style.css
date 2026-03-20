@@ -55,6 +55,7 @@ body {
     display: flex;
     background-color: var(--darkest);
     height: 100vh;
+    transition: background-color 0.3s ease;
 }
 .essentialMenu {
     gap: 0.5rem;
@@ -104,6 +105,7 @@ body {
     padding: 20px;
     box-shadow: 0px 10px 0px 0px rgba(0,0,0,0.5);
     border: var(--dark) 3px solid;
+    transition: background-color 0.3s ease;
 }
 .display {
     font-family: 'Roboto Mono', monospace;
@@ -136,6 +138,7 @@ body {
     color: var(--dark);
     box-shadow: 0px 5px 0px 1px rgba(0,0,0,0.3);
     border: var(--dark) 2px solid;
+    transition: background-color 0.3s ease;
     }
 .numButton:hover {
     transform: translateY(-2px);
@@ -164,6 +167,7 @@ body {
     background-color: var(--grey);
     color: var(--text-light);
     border: var(--darkest) 2px solid;
+    transition: background-color 0.3s ease;
 }
 .clear {
     background-color: var(--emphasize);
