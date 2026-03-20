@@ -4,16 +4,28 @@ let succesfullInput = "Elemen berhasil diklik";
 const displayOutput = document.getElementById('display');
 const inputButton = document.querySelectorAll('.numButton');
 const advancedFeature = document.querySelector('.advanced');
+
+// The themes changing function.
+const themesPallete = ['default', 'white', 'dark'];
+let choosingThemesPallete = 0;
 const themeChangging = document.querySelector('.theme');
+const getBodyElement = document.body
+
+const rememberChoosingThemes = localStorage.getItem('calculatorThemesItemStorage');
+if (rememberChoosingThemes && themesPallete.includes(rememberChoosingThemes)) {
+    choosingThemesPallete = themesPallete.indexOf(rememberChoosingThemes);
+    getBodyElement.setAttribute('theme-option', themesPallete[choosingThemesPallete]);
+}
 
 themeChangging.addEventListener('click', function() {
-    console.log(developmentMessage + " dan " + succesfullInput);
-})
-advancedFeature.addEventListener('click', function() {
-    console.log(developmentMessage + " dan " + succesfullInput);
+    console.log(succesfullInput);
+    choosingThemesPallete = (choosingThemesPallete + 1) % themesPallete.length;
+    const addTheme = themesPallete[choosingThemesPallete];
+    getBodyElement.setAttribute('theme-option', addTheme);
+    localStorage.setItem('calculatorThemesItemStorage', addTheme);
 })
 
-// How the calculator displayed
+// Calculator Function
 inputButton.forEach(button => {
     button.addEventListener('click', function(e) {
         const buttonTarget = e.currentTarget;
@@ -49,3 +61,10 @@ inputButton.forEach(button => {
         }
     });
 });
+
+// The Advanced Features
+// The advanced feature function that provide other advanced math function.
+// THIS FEATURE STILL WORK IN PROGRESS...
+advancedFeature.addEventListener('click', function() {
+    console.log(developmentMessage + " dan " + succesfullInput);
+})
