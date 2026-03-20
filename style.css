@@ -122,6 +122,7 @@ body {
     margin-bottom: 10px;
     border: var(--darkest) 2px solid;
     box-shadow: 2px 2px 2px 0px #00000071, inset 2px 2px 2px 0px #00000064, inset -2px -2px 0px 1px rgba(0, 0, 0, 0.329);
+    transition: background-color 0.3s ease;
 }
 .button {
     display: grid;
