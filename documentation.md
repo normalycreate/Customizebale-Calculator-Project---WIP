@@ -1,3 +1,8 @@
+# Documentation (EN) & (ID) 
+
+## Theme Changging
+**Remember Choosing Themes** : Sebagai variable yang berperan untuk mengambil nilai dari 'calculatorThemesItemStorage' 
+
 ## How It Works Calculation System
 INA : Mengambil variabel dari div display calculator. body -> div(calculator) -> div(display) atasnya bagian button. <br>
 EN : Taking variables from the calculator display div. body -> div(calculator) -> div(display) above the button section.
