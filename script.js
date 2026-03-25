@@ -6,22 +6,21 @@ const inputButton = document.querySelectorAll('.numButton');
 const advancedFeature = document.querySelector('.advanced');
 
 // The themes changing function.
-const themesPallete = ['default', 'white', 'dark'];
-let choosingThemesPallete = 0;
+const pallete = ['default', 'white', 'dark'];
+let themesDefault = 0;
 const themeChangging = document.querySelector('.theme');
-const getBodyElement = document.body
+const getBody = document.body
 
 const rememberChoosingThemes = localStorage.getItem('calculatorThemesItemStorage');
-if (rememberChoosingThemes && themesPallete.includes(rememberChoosingThemes)) {
-    choosingThemesPallete = themesPallete.indexOf(rememberChoosingThemes);
-    getBodyElement.setAttribute('theme-option', themesPallete[choosingThemesPallete]);
+if (rememberChoosingThemes && pallete.includes(rememberChoosingThemes)) {
+    themesDefault = themesPallete.indexOf(rememberChoosingThemes);
+    getBody.setAttribute('theme-option', pallete[themesDefault]);
 }
 
 themeChangging.addEventListener('click', function() {
-    console.log(succesfullInput);
-    choosingThemesPallete = (choosingThemesPallete + 1) % themesPallete.length;
-    const addTheme = themesPallete[choosingThemesPallete];
-    getBodyElement.setAttribute('theme-option', addTheme);
+    themesDefault = themesDefault + 1;
+    const addTheme = pallete[themesDefault];
+    getBody.setAttribute('theme-option', addTheme);
     localStorage.setItem('calculatorThemesItemStorage', addTheme);
 })
 
