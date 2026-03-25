@@ -1,9 +1,20 @@
 # Documentation (EN) & (ID) 
+## Theme Changging 25/03/2026
+### Variabels
+- **rememberChoosingThemes** : (INA) Sebagai variable yang berperan untuk mengambil nilai dari 'calculatorThemesItemStorage'. (EN) As a variable used to retrieve values from ‘calculatorThemesItemStorage’.<br>
+- **themesPallete** : Menampilkan opsi warna yang disediakan yang mengubah elemen body yang didapatkan dari root tambahan CSS. (EN) Displays the available color options that modify the body element obtained from the root using additional CSS.<br>
+- **themeChangging** : Mendapatkan class HTML dari tombol '.theme'. (EN) Get the HTML class of the ‘.theme’ button.<br>
+- **getBodyElement** : Penyingkatan dari 'document.body'. (EN) An abbreviation for ‘document.body’.<br>
+- **addTheme** : Menghubungkan opsi pada 'themesPallete' dengan indeks pada 'choosingThemesPallete' ke dalam bentuk array. (EN) Map the options in ‘themesPallete’ to the indices in ‘choosingThemesPallete’ to form an array.
 
-## Theme Changging
-**Remember Choosing Themes** : Sebagai variable yang berperan untuk mengambil nilai dari 'calculatorThemesItemStorage' 
+### How It Works
+- Jika **rememberChoosingThemes** memiliki riwayat themes. Jika iya maka browser akan menampilkan sesuai dengan themes yang digunakan oleh user sebelumnya. Jikat tidak maka browser akan menggunakan angka 0 pada indeks atau theme 'default'.
+- Jika tombol diklik maka variabel pada choosingThemesPallete akan bertambah 1 dari angka default yaitu nol lalu akan kembali ke nol dengan menggunakan modulo yang disesuaikan dengan panjang pada 'themesPallete'. 
+- Menerapkan tema dengan document.body dengan memberikan atribute 'theme-option' pada css yang lalu akan menerapkan sesuai dengan 'themesPallete'. 
+- Menyimpan posisi angka array dan tampilan themes yang sudah diganti ke dalam setItem('calculatorThemesItemStorage', addTheme); 
 
-## How It Works Calculation System
+## Calculator Logic
+### How It Works Calculation System
 INA : Mengambil variabel dari div display calculator. body -> div(calculator) -> div(display) atasnya bagian button. <br>
 EN : Taking variables from the calculator display div. body -> div(calculator) -> div(display) above the button section.
     
