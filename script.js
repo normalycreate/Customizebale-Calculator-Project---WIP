@@ -3,7 +3,6 @@ let developmentMessage = "Fitur masih dalam tahap pengembangan";
 let succesfullInput = "Elemen berhasil diklik";
 const displayOutput = document.getElementById('display');
 const inputButton = document.querySelectorAll('.numButton');
-const advancedFeature = document.querySelector('.advanced');
 
 // The themes changing function.
 const themesPallete = ['default', 'white', 'dark'];
