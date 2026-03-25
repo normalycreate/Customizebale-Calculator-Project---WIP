@@ -61,9 +61,11 @@ inputButton.forEach(button => {
     });
 });
 
-// The Advanced Features
-// The advanced feature function that provide other advanced math function.
-// THIS FEATURE STILL WORK IN PROGRESS...
-advancedFeature.addEventListener('click', function() {
-    console.log(developmentMessage + " dan " + succesfullInput);
-})
+//Advanced Feature Still Work In Development
+const toggleAdvancedBtn = document.querySelector('.advanced');
+const calculatorContainer = document.querySelector('.calculator'); 
+
+toggleAdvancedBtn.addEventListener('click', function() {
+    this.classList.toggle('active');
+    calculatorContainer.classList.toggle('mode-advanced');
+});
