@@ -13,7 +13,7 @@ const getBody = document.body
 
 const rememberChoosingThemes = localStorage.getItem('calculatorThemesItemStorage');
 if (rememberChoosingThemes && pallete.includes(rememberChoosingThemes)) {
-    themesDefault = themesPallete.indexOf(rememberChoosingThemes);
+    themesDefault = pallete.indexOf(rememberChoosingThemes);
     getBody.setAttribute('theme-option', pallete[themesDefault]);
 }
 
