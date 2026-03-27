@@ -1,11 +1,30 @@
 # Documentation (EN) & (ID) 
+## Dom Swapping Mechanism 26/03/2026
+- **toggleAdvancedButton** : (INA) mengambil tampilan pada kalkulator dengan fungsi dasar. 
+- (EN) take a look at the calculator with basic functions.
+- **basicFunctionToggle** : (INA) mengambil tampilanpada kalkulator dengan fungsi tambahan lain. 
+- (EN) take a look at the calculator with other additional functions.
+
+        toggleAdvancedBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            basicFunctionToggle.classList.toggle('mode-advanced');
+        });
+
+- (INA) Ketika tombol advanced di click maka classlist akan mengubah pada kode css **'.calculator.mode-advanced .button'** menjadi active dan mengubahnya menjadi display : none dan bersamaan dengan **'.calculator.mode-advanced .advancedFeature'** yang mengubahnya menjadi display : grid sehingga terjadi mekanisme pergantian tombol. 
+- (EN) When the advanced button is clicked, the classlist will change the CSS code **'.calculator.mode-advanced .button'** to active and change it to display: none and together with **'.calculator.mode-advanced .advancedFeature'** which changes it to display: grid so that the button changing mechanism occurs.
+
 ## Theme Changging 25/03/2026
 ### Variabels
-- **rememberChoosingThemes** : (INA) Sebagai variable yang berperan untuk mengambil nilai dari 'calculatorThemesItemStorage'. (EN) As a variable used to retrieve values from ‘calculatorThemesItemStorage’.<br>
-- **themesPallete** : Menampilkan opsi warna yang disediakan yang mengubah elemen body yang didapatkan dari root tambahan CSS. (EN) Displays the available color options that modify the body element obtained from the root using additional CSS.<br>
-- **themeChangging** : Mendapatkan class HTML dari tombol '.theme'. (EN) Get the HTML class of the ‘.theme’ button.<br>
-- **getBodyElement** : Penyingkatan dari 'document.body'. (EN) An abbreviation for ‘document.body’.<br>
-- **addTheme** : Menghubungkan opsi pada 'themesPallete' dengan indeks pada 'choosingThemesPallete' ke dalam bentuk array. (EN) Map the options in ‘themesPallete’ to the indices in ‘choosingThemesPallete’ to form an array.
+- **rememberChoosingThemes** : (INA) Sebagai variable yang berperan untuk mengambil nilai dari 'calculatorThemesItemStorage'. 
+- (EN) As a variable used to retrieve values from ‘calculatorThemesItemStorage’.
+- **themesPallete** : Menampilkan opsi warna yang disediakan yang mengubah elemen body yang didapatkan dari root tambahan CSS. 
+- (EN) Displays the available color options that modify the body element obtained from the root using additional CSS.
+- **themeChangging** : Mendapatkan class HTML dari tombol '.theme'. 
+- (EN) Get the HTML class of the ‘.theme’ button.
+- **getBodyElement** : Penyingkatan dari 'document.body'. 
+- (EN) An abbreviation for ‘document.body’.
+- **addTheme** : Menghubungkan opsi pada 'themesPallete' dengan indeks pada 'choosingThemesPallete' ke dalam bentuk array. 
+- (EN) Map the options in ‘themesPallete’ to the indices in ‘choosingThemesPallete’ to form an array.
 
 ### How It Works
 - Jika **rememberChoosingThemes** memiliki riwayat themes. Jika iya maka browser akan menampilkan sesuai dengan themes yang digunakan oleh user sebelumnya. Jikat tidak maka browser akan menggunakan angka 0 pada indeks atau theme 'default'.
@@ -51,7 +70,7 @@ EN : Retrieve the button value from a button function that displays a number tha
     let takeButtonValue = buttonTarget.getAttribute('data-value');
 
 INA : Ini adalah bagian khusus atau optional dan digunakan untuk mencegah null pada display apabila angka pada button tidak ada data-value yang dimana ini langsung mengambil pada bagian < button >angka< button >. Alternatif bisa menggunakan data-value="" pada masing masing tombol. <br>
-EN : This is an optional section used to prevent a blank display if the button has no data-value, in which case it directly retrieves the value from the <button>number<button> section. Alternatively, you can use data-value=“” on each button. 
+EN : This is an optional section used to prevent a blank display if the button has no data-value, in which case it directly retrieves the value from the <button>number</button> section. Alternatively, you can use data-value=“” on each button. 
 
     if(!takeButtonValue) {
         takeButtonValue = buttonTarget.innerText.trim();
@@ -89,7 +108,7 @@ EN : Displaying all of the input into the calculator display.
         }
 
 INA : Penutup
-RN : Closing
+<br>EN : Closing
 
         });
     });
