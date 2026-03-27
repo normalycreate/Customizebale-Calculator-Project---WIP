@@ -33,113 +33,129 @@ inputButton.forEach(button => {
         //Feedback MSG
         const errorMsg = 'Error';
         // Calculator Logical
-        if(action === 'clear') {
-            displayOutput.value = '';
-        } else if(action === 'delete') {
-            displayOutput.value = displayOutput.value.slice(0, -1);
-        } else if(action === 'equal') {
-            try {
-                let calculateAll = math.evaluate(displayOutput.value);
-                if (!Number.isInteger(calculateAll) && calculateAll.toString().split('.')[1]?.length > 8) {
-                    displayOutput.value = parseFloat(calculateAll.toFixed(7));
-                } else {
-                    displayOutput.value = calculateAll;
-                }
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'squareRoot') {
-            try {
-                let currentValue = math.sqrt(displayOutput.value);
-                if (!Number.isInteger(currentValue) && currentValue.toString().split('.')[1]?.length > 8) {
-                    displayOutput.value = parseFloat(currentValue.toFixed(7));
-                } else {
-                    displayOutput.value = currentValue;
-                }
-                // displayOutput.value = Math.sqrt(currentValue).toFixed(8);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'numberGenerator') {
-            try {
-                let randomizing = math.random(displayOutput.value).toFixed(0);
-                if (randomizing < 0) {
+        switch(action) {
+            case 'clear': 
+                displayOutput.value = '';
+            break;
+            case 'delete': 
+                displayOutput.value = displayOutput.value.slice(0, -1);
+            break;
+            case 'equal':
+                try {
+                    let calculateAll = math.evaluate(displayOutput.value);
+                    if (!Number.isInteger(calculateAll) && calculateAll.toString().split('.')[1]?.length > 8) {
+                        displayOutput.value = parseFloat(calculateAll.toFixed(7));
+                    } else {
+                        displayOutput.value = calculateAll;
+                    }
+                } catch {
                     displayOutput.value = errorMsg;
-                } else {
-                    displayOutput.value = randomizing;
+                }   
+            break;
+            case 'squareRoot':
+                try {
+                    let currentValue = math.sqrt(displayOutput.value);
+                    if (!Number.isInteger(currentValue) && currentValue.toString().split('.')[1]?.length > 8) {
+                        displayOutput.value = parseFloat(currentValue.toFixed(7));
+                    } else {
+                        displayOutput.value = currentValue;
+                    }
+                    // displayOutput.value = Math.sqrt(currentValue).toFixed(8);
+                } catch {
+                    displayOutput.value = errorMsg;
                 }
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'gcd') {
-            try {
-                displayOutput.value = "gcd(" + displayOutput.value + ",";
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'hcf') {
-            try {
-                displayOutput.value = "lcm(" + displayOutput.value + ",";
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'rounding') {
-            try {
-                displayOutput.value = math.round(displayOutput.value);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'sin') {
-            try {
-                displayOutput.value = math.sin(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'cos') {
-            try {
-                displayOutput.value = math.cos(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'tan') {
-            try {
-                displayOutput.value = math.tan(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'cosecan') {
-            try {
-                displayOutput.value = math.csc(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'secan') {
-            try {
-                displayOutput.value = math.sec(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'cotan') {
-            try {
-                displayOutput.value = math.cot(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else if(action === 'logarithm') {
-            try {
-                displayOutput.value = math.log(displayOutput.value).toFixed(7);
-            } catch {
-                displayOutput.value = errorMsg;
-            }
-        } else {
-            if (takeButtonValue != "") {    
-                displayOutput.value += takeButtonValue;
-            }   
+            break;
+            case 'numberGenerator':
+                try {
+                    let randomizing = math.random(displayOutput.value).toFixed(0);
+                    if (randomizing < 0) {
+                        displayOutput.value = errorMsg;
+                    } else {
+                        displayOutput.value = randomizing;
+                    }
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'gcd':
+                try {
+                    displayOutput.value = "gcd(" + displayOutput.value + ",";
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'hcf':
+                try {
+                    displayOutput.value = "lcm(" + displayOutput.value + ",";
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'rounding':
+                try {
+                    displayOutput.value = math.round(displayOutput.value);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'sin':
+                try {
+                    displayOutput.value = math.sin(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'cos':
+                try {
+                    displayOutput.value = math.cos(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'tan':
+                try {
+                    displayOutput.value = math.tan(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'cosecan':
+                try {
+                    displayOutput.value = math.csc(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'secan':
+                try {
+                    displayOutput.value = math.sec(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'cotan':
+                try {
+                    displayOutput.value = math.cot(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            case 'logarithm':
+                try {
+                    displayOutput.value = math.log(displayOutput.value).toFixed(7);
+                } catch {
+                    displayOutput.value = errorMsg;
+                }
+            break;
+            default:
+                if (takeButtonValue != "") {    
+                    displayOutput.value += takeButtonValue;
+                }    
         }
     });
 });
 
-//Button Swapping
+//Advanced Feature Still Work In Development
 const toggleAdvancedBtn = document.querySelector('.advanced');
 const basicFunctionToggle = document.querySelector('.calculator'); 
 
