@@ -11,15 +11,15 @@ Indicator Bar.
 [✅] Keyboard Typing Calculation <br>
 
 ## Shortcut 
-BackSpace -> Delete number or operator.
-S -> Squareroot function.
-? -> Random number generator.
-g -> Shortcut for GCD (Greatest Common Divisor) function.
-k -> Shortcut for LCM (Least Common Multiple) function.
-! -> Shortcut for factorial function with maximum 18 number digits.
-l -> Shortcut for logarithn function.
-Enter / = -> Equal in calculator. 
-Dellete / Escape -> All clear button.
-
-Unfinished Calculator Link
+BackSpace -> Delete number or operator. <br>
+S -> Squareroot function.<br>
+? -> Random number generator.<br>
+g -> Shortcut for GCD (Greatest Common Divisor) function.<br>
+k -> Shortcut for LCM (Least Common Multiple) function.<br>
+! -> Shortcut for factorial function with maximum 18 number digits.<br>
+l -> Shortcut for logarithn function.<br>
+Enter / = -> Equal in calculator. <br>
+Dellete / Escape -> All clear button.<br>
+<br>
+Unfinished Calculator Link<br>
 https://normalycreate.github.io/Customizebale-Calculator-Project---WIP/
