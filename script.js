@@ -199,8 +199,8 @@ document.addEventListener('keydown', function(event) {
         case 'g':
             targetButton = select('[data-action="gcd"]');
             break;
-        case 'h':
-            targetButton = select('[data-action="hcf"]');
+        case 'k':
+            targetButton = select('[data-action="lcm"]');
             break;
         case '(':
             targetButton = select('[data-value="("]');
