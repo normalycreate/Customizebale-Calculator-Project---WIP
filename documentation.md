@@ -1,4 +1,19 @@
 # Documentation (EN) & (ID) 
+## Keyboard Input 02/04/2026
+### Purpose 
+- To add functionality in dekstop user to type a number or operator using keyboard to enhance the efficiency to calculate in calculator. 
+### Implementation 
+- **key -> event.key** : To getting the value in that button when getting pressed.
+- **select -> document.querySelector.bind(document);** : To get the data-value or data-action that can be called after the keyboard button that whitelisted in the switch pressed. 
+- **targetButton -> null** : To stored the button element or dom that selected by querySelector so it will be execute the suitable function in the switch.
+### Decision
+- Using switch case to enhance the readibility that make easier to read the code and debugging
+- Reducing redundancy and code duplication. 
+### Edge Case
+- Prevent default behavior for keys like Enter (avoid unintended form submission)
+- Ignore unsupported keys
+- Handle multiple key mappings (e.g. Enter and "=")
+
 ## Dom Swapping Mechanism 26/03/2026
 - **toggleAdvancedButton** : (EN) take a look at the calculator with basic functions.
 - **basicFunctionToggle** : (EN) take a look at the calculator with other additional functions.
